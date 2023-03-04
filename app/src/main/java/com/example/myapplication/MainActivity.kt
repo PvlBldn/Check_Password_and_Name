@@ -17,16 +17,19 @@ class MainActivity : AppCompatActivity() {
         bindingClass.btResult.setOnClickListener {
 
             val result = bindingClass.edValue.text.toString()
+            bindingClass.imageView.visibility = View.VISIBLE
 
             when (result) {
 
                 Constance.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    val tempText = "Получите ваши ${Constance.DVORNIK_SUELDO}"
-                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD){
-                    tempText
+                    val tempText = "Получите ваши ${Constance.DIRECTOR_SUELDO}"
+                    if (bindingClass.edPassword.text.toString() == Constance.DIRECTOR_PASSWORD){
+                    bindingClass.tvResult.text = tempText
+                        bindingClass.imageView.setImageResource(R.drawable.egor)
                     } else {
-                        "Nevernyi parol"
+                        bindingClass.tvResult.text = "Nevernyi parol"
+                        bindingClass.imageView.setImageResource(R.drawable.net)
                     }
                     }
 
@@ -34,10 +37,12 @@ class MainActivity : AppCompatActivity() {
                 Constance.INGINER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Poluchite vashi ${Constance.INGINER_SUELDO}"
-                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.INGINER_PASSWORD){
-                        tempText
+                    if (bindingClass.edPassword.text.toString() == Constance.INGINER_PASSWORD){
+                        bindingClass.tvResult.text = tempText
+                        bindingClass.imageView.setImageResource(R.drawable.andrey)
                     } else {
-                        "Nevernyi parol"
+                        bindingClass.tvResult.text = "Nevernyi parol"
+                        bindingClass.imageView.setImageResource(R.drawable.net)
                     }
 
 
@@ -46,10 +51,12 @@ class MainActivity : AppCompatActivity() {
                 Constance.DVORNIK -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Poluchite cashi ${Constance.DVORNIK_SUELDO}"
-                    bindingClass.tvResult.text = if (bindingClass.edPassword.text.toString() == Constance.DVORNIK_PASSWORD){
-                        tempText
+                    if (bindingClass.edPassword.text.toString() == Constance.DVORNIK_PASSWORD){
+                        bindingClass.tvResult.text = tempText
+                        bindingClass.imageView.setImageResource(R.drawable.sergei)
                     } else {
-                        "Nevernyi parol"
+                        bindingClass.tvResult.text = "Nevernyi parol"
+                        bindingClass.imageView.setImageResource(R.drawable.net)
                     }
 
                 }
